@@ -12,7 +12,7 @@ The list of commands and their usage is given below:
 
 # Updating and deleting tasks
 ```
-task-cli update 1 "Buy groceries and cook dinner"
+task-cli update "1 Buy groceries and cook dinner"
 task-cli delete 1
 ```
 
