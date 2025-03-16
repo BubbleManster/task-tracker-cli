@@ -33,7 +33,7 @@ try:
                 id = int(id)
                 val = val.strip()
             else:
-                print("Invalid use. Type --help for more info.")
+                print("Invalid use. Check the README.")
                 exit()
             index_of_id = next((i for i, item in enumerate(tasks["tasks"]) if item["id"] == id), None)
             try:
@@ -52,6 +52,46 @@ try:
                 print ("Deleted:", f"I.D. {id}")
             except TypeError:
                 print("An item with that I.D. does not exist.")
+                exit()
+        
+        elif currentArgument == "--mark-done":
+            id = int(currentValue)
+            index_of_id = next((i for i, item in enumerate(tasks["tasks"]) if item["id"] == id), None)
+            try:
+                tasks["tasks"][index_of_id]["status"] = "done"
+                print ("Marked:", f"I.D. {id}", "as done.")
+            except TypeError:
+                print("An item with that I.D. does not exist.")
+                exit()
+        
+        elif currentArgument == "--mark-in-progress":
+            id = int(currentValue)
+            index_of_id = next((i for i, item in enumerate(tasks["tasks"]) if item["id"] == id), None)
+            try:
+                tasks["tasks"][index_of_id]["status"] = "in-progress"
+                print ("Marked:", f"I.D. {id}", "as in progress.")
+            except TypeError:
+                print("An item with that I.D. does not exist.")
+                exit()
+
+        elif currentArgument == "--list":
+            if currentValue == "all":
+                for item in tasks["tasks"]:
+                    print(f'{item["desc"]}: {item["status"]}')
+            elif currentValue == "todo":
+                for item in tasks["tasks"]:
+                    if item["status"] == "todo":
+                        print(f'{item["desc"]}: {item["status"]}')
+            elif currentValue == "done":
+                for item in tasks["tasks"]:
+                    if item["status"] == "done":
+                        print(f'{item["desc"]}: {item["status"]}')
+            elif currentValue == "in-progress":
+                for item in tasks["tasks"]:
+                    if item["status"] == "in-progress":
+                        print(f'{item["desc"]}: {item["status"]}')
+            else:
+                print("Not a valid flag.")
                 exit()
             
 except getopt.error as err:
