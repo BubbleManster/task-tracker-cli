@@ -1,0 +1,25 @@
+{
+    "tasks":[
+        {
+            "id": 1,
+            "desc": "Buy groceries",
+            "status": "todo",
+            "createdAt": "2025-03-16T17:41Z",
+            "updatedAt": "2025-03-16T17:41Z"
+        },
+        {
+            "id": 2,
+            "desc": "Walk the dog",
+            "status": "todo",
+            "createdAt": "2025-03-16T17:41Z",
+            "updatedAt": "2025-03-16T17:41Z"
+        },
+        {
+            "id": 3,
+            "desc": "Take out trash",
+            "status": "done",
+            "createdAt": "2025-03-16T17:41Z",
+            "updatedAt": "2025-03-16T17:45Z"
+        }
+    ]
+}
